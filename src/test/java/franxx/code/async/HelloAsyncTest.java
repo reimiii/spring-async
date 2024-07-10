@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.Duration;
+import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,5 +27,13 @@ class HelloAsyncTest {
 
     log.info("after call helloAsync()");
     Thread.sleep(Duration.ofSeconds(5));
+  }
+
+  @SneakyThrows
+  @Test
+  void helloName() {
+    Future<String> zeroTwo = helloAsync.hello("Zero Two");
+    String response = zeroTwo.get();
+    log.info(response);
   }
 }
