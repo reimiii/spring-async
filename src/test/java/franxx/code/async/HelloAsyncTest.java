@@ -25,6 +25,6 @@ class HelloAsyncTest {
     }
 
     log.info("after call helloAsync()");
-    Thread.sleep(Duration.ofSeconds(10));
+    Thread.sleep(Duration.ofSeconds(5));
   }
 }
