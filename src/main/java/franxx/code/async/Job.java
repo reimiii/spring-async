@@ -13,6 +13,13 @@ public class Job {
 
   private AtomicLong atomicLong = new AtomicLong(0);
 
+  @Scheduled(cron = "*/2 * * * * *")
+  public void cron() {
+    log.info(
+        "run cron every second"
+    );
+  }
+
   @Scheduled(timeUnit = TimeUnit.SECONDS, initialDelay = 2, fixedDelay = 2)
   public void runJob() {
 
