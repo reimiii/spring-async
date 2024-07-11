@@ -29,8 +29,8 @@ class HelloAsyncTest {
     Thread.sleep(Duration.ofSeconds(5));
   }
 
-  @SneakyThrows
   @Test
+  @SneakyThrows
   void helloName() {
     Future<String> zeroTwo = helloAsync.hello("Zero Two");
     String response = zeroTwo.get();
